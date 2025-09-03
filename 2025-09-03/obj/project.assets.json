@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Spengergasse\\3AHWII\\SWP\\SWP.csproj",
-      "projectName": "SWP",
-      "projectPath": "C:\\Spengergasse\\3AHWII\\SWP\\SWP.csproj",
+      "projectUniqueName": "C:\\Spengergasse\\3AHWII\\SWP\\2025-09-03\\2025-09-03.csproj",
+      "projectName": "2025-09-03",
+      "projectPath": "C:\\Spengergasse\\3AHWII\\SWP\\2025-09-03\\2025-09-03.csproj",
       "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
-      "outputPath": "C:\\Spengergasse\\3AHWII\\SWP\\obj\\",
+      "outputPath": "C:\\Spengergasse\\3AHWII\\SWP\\2025-09-03\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config"
