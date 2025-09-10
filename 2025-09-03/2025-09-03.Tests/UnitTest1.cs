@@ -1,10 +1,13 @@
 ﻿using Xunit;
 
-public class SmokeTests
+namespace _2025_09_03.Tests
 {
-    [Fact]
-    public void It_Works()
+    public class UnitTest1
     {
-        Assert.True(true);
+        [Fact]
+        public void It_Works()
+        {
+            Assert.True(true);
+        }
     }
 }

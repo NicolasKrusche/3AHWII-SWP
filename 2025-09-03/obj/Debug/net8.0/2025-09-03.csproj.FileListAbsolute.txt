@@ -1,0 +1,5 @@
+C:\Spengergasse\3AHWII\SWP\2025-09-03\obj\Debug\net8.0\2025-09-03.GeneratedMSBuildEditorConfig.editorconfig
+C:\Spengergasse\3AHWII\SWP\2025-09-03\obj\Debug\net8.0\2025-09-03.AssemblyInfoInputs.cache
+C:\Spengergasse\3AHWII\SWP\2025-09-03\obj\Debug\net8.0\2025-09-03.AssemblyInfo.cs
+C:\Spengergasse\3AHWII\SWP\2025-09-03\obj\Debug\net8.0\2025-09-03.csproj.CoreCompileInputs.cache
+C:\Spengergasse\3AHWII\SWP\2025-09-03\obj\Debug\net8.0\2025-09-03.sourcelink.json
