@@ -1,13 +1,10 @@
-﻿using Xunit;
+﻿using Xunit; // <— wichtig!
 
-namespace _2025_09_03.Tests
+public class UnitTest1
 {
-    public class UnitTest1
+    [Fact]
+    public void Sanity()
     {
-        [Fact]
-        public void It_Works()
-        {
-            Assert.True(true);
-        }
+        Assert.True(true);
     }
 }
