@@ -4,6 +4,7 @@
     "jsr:@std/assert@1": "1.0.13",
     "jsr:@std/internal@^1.0.6": "1.0.6",
     "npm:@prisma/client@^6.17.0": "6.17.0_prisma@6.17.0",
+    "npm:hono@^4.9.12": "4.9.12",
     "npm:prisma@^6.17.0": "6.17.0"
   },
   "jsr": {
@@ -148,6 +149,9 @@
       ],
       "bin": true
     },
+    "hono@4.9.12": {
+      "integrity": "sha512-SrTC0YxqPwnN7yKa8gg/giLyQ2pILCKoideIHbYbFQlWZjYt68D2A4Ae1hehO/aDQ6RmTcpqOV/O2yBtMzx/VQ=="
+    },
     "jiti@2.6.1": {
       "integrity": "sha512-ekilCSN1jwRvIbgeg/57YFh8qQDNbwDb9xT/qu2DAHbFFZUicIl4ygVaAvzveMhMVr3LnpSKTNnwt8PoOfmKhQ==",
       "bin": true
@@ -213,6 +217,7 @@
     "dependencies": [
       "jsr:@std/assert@1",
       "npm:@prisma/client@^6.17.0",
+      "npm:hono@^4.9.12",
       "npm:prisma@^6.17.0"
     ]
   }
