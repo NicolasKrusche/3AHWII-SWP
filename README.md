@@ -1,1 +1,1 @@
-Mein Repo für die 3AHWII (SJ 2025 / 2026)
+Nicolas Krusches Repo für die 3AHWII
