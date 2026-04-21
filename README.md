@@ -5,23 +5,30 @@ Dieses Repository enthält verschiedene Projekte und Beispiele für den SWP-Unte
 ## Projektübersicht
 
 Hier findest du unterschiedliche Projekte aus dem Unterricht, z.B.:
+
 - Bruchrechner in C#
 - Deno/Prisma Starterprojekte
 - CSV-Personenverwaltung
 - Inventarsystem
+- Blazor Web App
+- Inference-/Opencode-Recherche
 
 ## Verzeichnisstruktur
 
-- `2025-10_deno_prisma_starter/` – Deno-Projekt mit Prisma
-- `2025-10-15_prisma_loginsystem/` – Login-System mit Prisma
-- `2025-11_brueche/` – Bruchrechner in C#
-- `2025-12-02/` – Bruch-Projekt mit Tests
-- `2026-01_CSV_Persons/` – CSV-Personenverwaltung
-- `2026-03-11_InvSystem/` – Inventarsystem
+- `2025-10_deno_prisma_starter/` - Deno-Projekt mit Prisma
+- `2025-10-15_prisma_loginsystem/` - Login-System mit Prisma
+- `2025-11_brueche/` - Bruchrechner in C#
+- `2025-12-02/` - Bruch-Projekt mit Tests
+- `2025_Blazor/` - lauffähige Blazor Web App für die Aufgabe vom 2026-04-21
+- `2026-01_CSV_Persons/` - CSV-Personenverwaltung
+- `2026-03-11_InvSystem/` - Inventarsystem
+- `2026-04-15_Inference/` - Inference-Recherche und Opencode-Free-Tier-Dokumentation
+- `AUFGABEN_2026-04-21_dokumentation.md` - zentrale Dokumentation zur aktuellen Aufgabe
 
 ## Nutzung/Beispiele
 
 Die einzelnen Projekte sind jeweils im passenden Unterordner zu finden. Für Details zur Nutzung siehe die README-Dateien in den jeweiligen Projektordnern oder die Quelltexte.
 
 ---
+
 Repo von Nicolas Krusche für die 3AHWII

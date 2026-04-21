@@ -1,50 +1,52 @@
 # Inference
 
-Was ist Inference? -> Inference ist die Fähigkeit eines Modells, auf Basis von gelernten Mustern und Informationen neue Schlussfolgerungen zu ziehen oder Vorhersagen zu treffen. Es ermöglicht einem Modell, auf unbekannte Daten zu reagieren und relevante Informationen zu generieren, auch wenn es diese spezifischen Daten nicht zuvor gesehen hat.
+Inference bedeutet: Ein Modell erzeugt aus gelernten Mustern eine neue Antwort, Vorhersage oder Entscheidung. Für unsere SWP-Aufgaben ist besonders wichtig, welche Dienste man kostenlos oder mit sehr kleinem Budget testen kann.
 
-## Opencode Config
+## Opencode-Konfiguration
 
-- npm i -g opencode-ai
-- opencode auth login  # provider-connect
-- `/model` in der TUI bzw. `opencode models`  # liste was verfügbar ist
-- `ctrl-d` ... exit app (EOF)
+Die Free-Tier-Provider aus dieser Recherche sind in der Repo-Datei `../opencode.json` eingetragen. Opencode liest Projekt- und globale Konfiguration zusammen, deshalb kann diese Datei direkt im Repo bleiben.
 
-## Providers
+Nutzung:
 
-- groq (eigenes Silikon)
-- aistudio google gemini
-- openrouter (PAYG, aber freie Modelle)
-- opencode (big pickle)
-- nvidia
+```powershell
+npm i -g opencode-ai
+opencode models --refresh
+opencode run "Sag kurz Hallo" -m openrouter/openai/gpt-oss-20b:free
+```
 
-**Recherche Inference:**
+Nötige API-Keys als Umgebungsvariablen:
 
-## komplett "gratis"
+```powershell
+$env:OPENROUTER_API_KEY="..."
+$env:GROQ_API_KEY="..."
+$env:GOOGLE_API_KEY="..."
+$env:HUGGINGFACE_API_KEY="..."
+$env:NVIDIA_API_KEY="..."
+$env:MISTRAL_API_KEY="..."
+```
 
-Groq: Sehr schnelle Inference mit kostenlosen Limits für Open-Source-Modelle wie Llama, Mistral und Gemma; gut für Tests und kleine Projekte.
-Link: https://console.groq.com/
-Account: Mit E-Mail anmelden, einloggen, API-Key im Dashboard erstellen.
-Kosten: Free Tier vorhanden, danach abhängig von Modell und Nutzung.
+## Eingetragene Free-Tier-Optionen
 
-Google AI Studio / Gemini API: Gute kostenlose Einstiegsmöglichkeit für Gemini 2.5 und Gemini Flash, aber mit Rate Limits.
-Link: https://aistudio.google.com/
-Account: Mit deinem Google-Konto anmelden, dann API-Key erstellen.
-Kosten: Kostenloses Kontingent vorhanden; bei höherer Nutzung wird über Google Cloud abgerechnet.
-Dürfte ident sein mit:
+| Provider | Opencode-Modelle / Provider | Was gut geht | Problem / Grenze |
+| --- | --- | --- | --- |
+| OpenRouter | `openrouter/openai/gpt-oss-20b:free`, `openrouter/meta-llama/llama-3.3-70b-instruct:free` | Viele Free-Modelle unter einem Key, guter Einstieg für Vergleiche. | Free-Modelle wechseln und haben Limits; man muss `opencode models openrouter --refresh` nutzen. |
+| Groq | `groq/openai/gpt-oss-20b`, `groq/llama-3.1-8b-instant` | Sehr schnelle Antworten, gut für kleine Tools und Tests. | Free Tier hat Rate Limits; nicht jedes Modell ist für Coding gleich stark. |
+| Google AI Studio | `google/gemini-2.5-flash`, `google/gemini-2.5-flash-lite` | Sehr guter Allrounder, besonders für Zusammenfassungen und UI-Ideen. | Key/Quota laufen über Google; Modellnamen können sich ändern. |
+| Hugging Face | `huggingface/Qwen/Qwen3-Coder-Next`, `huggingface/moonshotai/Kimi-K2-Instruct` | Viele offene Modelle, spannend zum Ausprobieren. | Inference Providers haben je nach Anbieter unterschiedliche Limits und Wartezeiten. |
+| NVIDIA | `nvidia/openai/gpt-oss-20b`, `nvidia/meta/llama-3.1-70b-instruct` | Gute Modellliste, auch für Open-Source-Modelle. | API-Key und Plattform-Login nötig; Free-Kontingent muss im Account geprüft werden. |
+| Mistral | `mistral-free/mistral-small-latest`, `mistral-free/codestral-latest` | Kann über OpenAI-kompatiblen Endpoint in Opencode eingebunden werden. | Opencode hatte keinen eingebauten `mistral`-Provider; deshalb Custom-Provider. |
+| Ollama lokal | `ollama-local/llama3.2:3b`, `ollama-local/qwen2.5-coder:7b` | Komplett lokal und ohne API-Kosten. | Nur lauffähig, wenn Ollama lokal installiert ist und das Modell gezogen wurde. |
 
-- Google Gemini API Free Tier (Google AI Studio)   https://ai.google.dev/pricing
+## Was besonders gut geht
 
-OpenRouter: Viele Modelle unter einem Dach, sowohl kostenlose als auch bezahlte Modelle.
-Link: https://openrouter.ai/
-Account: E-Mail oder SSO anmelden, dann API-Key im Account-Bereich erstellen.
-Kosten: Pay-as-you-go, Plattformgebühr laut Pricing aktuell 5,5 Prozent; außerdem gibt es kostenlose Modelle mit Limits.
+- `opencode models --refresh` findet aktuelle Modell-IDs sehr schnell.
+- OpenRouter ist für den Unterricht praktisch, weil viele Free-Modelle mit einem Account testbar sind.
+- Groq ist auffallend flott und eignet sich gut für kurze Prompts, Debugging-Ideen und Experimente.
+- Lokale Modelle mit Ollama sind die beste Option, wenn man ohne Kostenlimit herumprobieren will.
 
-**Cloudflare Workers AI** | LLaMA, Mistral u. a. | Gratis-Kontingent im Free-Plan |
+## Probleme
 
-**Ollama (lokal)** | Beliebige Open-Source-Modelle | 100 % gratis, läuft auf eigenem PC |
-
-**Mistral API** | Mistral 7B | Gratis-Tier verfügbar |
-
-https://huggingface.co/docs/inference-providers/pricing
-
-## "günstig"
+- Keine API-Keys waren in der Umgebung gesetzt; echte Requests konnten deshalb nicht gegen die Provider getestet werden.
+- `mistral`, `cloudflare` und `ollama` wurden von `opencode models <provider>` nicht als eingebaute Provider erkannt.
+- Cloudflare Workers AI braucht einen Account-spezifischen Endpoint mit Account-ID. Ohne diese Daten ist eine sinnvolle Repo-Config zu riskant; deshalb ist Cloudflare hier dokumentiert, aber nicht aktiv eingetragen.
+- Free Tiers ändern sich. Die Konfiguration ist ein Startpunkt, kein Dauervertrag.
